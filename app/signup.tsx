@@ -4,7 +4,7 @@ const SignUp = () => {
   return (
     <View className="flex-1 bg-[#F6F6F6]">
       <View className="flex-row justify-between">
-        <Text>Sign Up</Text>
+        <Text className="font-nunito-bold">Sign Up</Text>
         <Pressable>
           <Text>Log in</Text>
         </Pressable>
