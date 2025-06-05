@@ -4,7 +4,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'nunito-bold': ['Nunito-Bold', 'sans-serif'],
+                'nunito-bold': ['nunito-bold', 'sans-serif'],
             },
         },
     },
