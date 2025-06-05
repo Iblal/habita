@@ -10,6 +10,7 @@ SplashScreen.preventAutoHideAsync();
 export default function Layout() {
   const [loaded, error] = useFonts({
     'nunito-bold': require('../assets/fonts/nunito-bold.ttf'),
+    'nunito-extra-bold': require('../assets/fonts/nunito-extra-bold.ttf')
   });
 
   useEffect(() => {
