@@ -1,50 +1,85 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Pressable, Text, TextInput, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Link } from 'expo-router';
 
+const labelStyle = "px-5 font-nunito-semi-bold text-base text-[#666666]";
+const inputStyle = "mx-5 mt-2 h-14 rounded-md border border-[#EDEDED] bg-white p-4";
+const formGroupStyle = "mb-4";
+
 const SignUp = () => {
   return (
-    <View className="flex-1 bg-[#f6f6f6b1]">
-      <View className="mt-10 flex-row items-center justify-center">
-        <Text className="mr-10 h-[55px] w-[167px] font-nunito-bold text-[40px] leading-[55px]">
-          Sign Up
-        </Text>
-        <View className="mt-4">
-          <Link href="/">
-            <Text className="h-[19px] w-[59px] font-nunito-extra-bold text-[14px] leading-[19px]  text-[#FF5C00]">
-              Log in {'>'}
-            </Text>
-          </Link>
-        </View>
+    <View className="flex-1 bg-[#f6f6f6b1] pt-10">
+      <View className="mb-10 flex-row items-baseline justify-center gap-10">
+        <Text className="font-nunito-bold text-[40px]">Sign Up</Text>
+        <Link href="/">
+          <Text className="font-nunito-extra-bold text-[14px] text-[#FF5C00]">
+            Log in {'>'}
+          </Text>
+        </Link>
       </View>
-      <View className="mt-10">
-        <Text className="ml-5 font-nunito-semi-bold text-[#666666]">Name</Text>
-        <TextInput className="m-5 mt-3 rounded-md border border-[#EDEDED] bg-white"></TextInput>
+
+      <View className={formGroupStyle}>
+        <Text className={labelStyle}>Name</Text>
+        <TextInput
+          className={inputStyle}
+          placeholder="Enter your name"
+          placeholderTextColor="#999"
+          autoCapitalize="words"
+        />
       </View>
-      <Text className="ml-5 font-nunito-semi-bold text-[#666666]">Email</Text>
-      <TextInput className="m-5 mt-3 rounded-md border border-[#EDEDED] bg-white"></TextInput>
-      <Text className="ml-5 font-nunito-semi-bold text-[#666666]">Password</Text>
-      <TextInput className="m-5 mt-3 rounded-md border border-[#EDEDED] bg-white"></TextInput>
-      <Text className="ml-5 font-nunito-semi-bold text-[#666666]">Password Confirmation</Text>
-      <TextInput className="m-5 mt-3 rounded-md border border-[#EDEDED] bg-white"></TextInput>
-      <Pressable className="m-5 overflow-hidden rounded-md">
+
+      <View className={formGroupStyle}>
+        <Text className={labelStyle}>Email</Text>
+        <TextInput
+          className={inputStyle}
+          placeholder="Enter your email"
+          placeholderTextColor="#999"
+          keyboardType="email-address"
+          autoCapitalize="none"
+        />
+      </View>
+
+      <View className={formGroupStyle}>
+        <Text className={labelStyle}>Password</Text>
+        <TextInput
+          className={inputStyle}
+          placeholder="Create a password"
+          placeholderTextColor="#999"
+          secureTextEntry={true}
+        />
+      </View>
+
+      <View className={formGroupStyle}>
+        <Text className={labelStyle}>Password Confirmation</Text>
+        <TextInput
+          className={inputStyle}
+          placeholder="Confirm your password"
+          placeholderTextColor="#999"
+          secureTextEntry={true}
+        />
+      </View>
+
+      <Pressable className="mx-5 mt-4 overflow-hidden rounded-lg">
         <LinearGradient
-          className="px-6 py-5"
-          colors={['#e6a05c', '#ff7a18', '#ff5e00']}
-          start={{ x: 0, y: 1 }}
-          end={{ x: 1, y: 1 }}
+          className="items-center justify-center px-6 py-4"
+          colors={['#fb923c', '#f97316']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
         >
-          <Text className="text-center font-nunito-extra-bold text-white">Sign Up</Text>
+          <Text className="text-center text-lg font-bold text-white">Sign Up</Text>
         </LinearGradient>
       </Pressable>
-      <Text>Or sign up with:</Text>
-      <Pressable>
-        <Text>Google</Text>
+
+      <View className="my-8 items-center">
+        <Text className="text-gray-500">Or sign up with:</Text>
+      </View>
+
+      <Pressable className="mx-5 flex-row items-center justify-center rounded-lg border border-gray-300 bg-white p-3">
+        <Text className="mr-2 font-bold text-xl">G</Text>
+        <Text className="font-semibold text-gray-700">Google</Text>
       </Pressable>
     </View>
   );
 };
 
 export default SignUp;
-
-const styles = StyleSheet.create({});
