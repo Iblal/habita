@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Stack.Screen options={{ title: 'Home'}} />
-      <Pressable className="bg-blue-500" onPress={() => router.push('/signup')}>
+      <Pressable className="bg-blue-500" onPress={() => router.push('/SignUp')}>
         <Text>Sign Up</Text>
       </Pressable>
     </>
