@@ -1,6 +1,7 @@
 import { Text, View, Alert, ScrollView, KeyboardAvoidingView, Platform } from 'react-native'; // Import ScrollView, KeyboardAvoidingView, Platform
 import { useState } from 'react';
 import InputField from '../../components/InputField';
+import FormErrorLabel from '~/components/FormErrorLabel';
 import FormSubmitBtn from '~/components/FormSubmitBtn';
 import GoogleAuthBtn from '~/components/GoogleAuthBtn';
 import SignUpHeader from '~/components/SignUpHeader';
@@ -99,29 +100,23 @@ const SignUp = () => {
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-    >
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <ScrollView
         contentContainerStyle={{ flexGrow: 1, backgroundColor: '#f6f6f6b1', paddingTop: 10 }}
-        keyboardShouldPersistTaps="handled"
-      >
+        keyboardShouldPersistTaps="handled">
         <SignUpHeader />
-
-        <Text className="mb-2 ml-5 text-red-600">{nameError}</Text>
+        <FormErrorLabel label={nameError} />
         <InputField label="Name" value={name} onChangeText={handleNameChange} />
-
-        <Text className="mb-2 ml-5 text-red-600">{emailError}</Text>
+        <FormErrorLabel label={emailError} />
         <InputField label="Email" value={email} onChangeText={handleEmailChange} />
-
-        <Text className="mb-2 ml-5 text-red-600">{passwordError}</Text>
+        <FormErrorLabel label={passwordError} />
         <InputField
           label="Password"
           value={password}
           onChangeText={handlePasswordChange}
           secureTextEntry={true}
         />
-
-        <Text className="mb-2 ml-5 text-red-600">{passwordConfirmationError}</Text>
+        <FormErrorLabel label={passwordConfirmationError} />
         <InputField
           label="Password confirmation"
           value={passwordConfirmation}
