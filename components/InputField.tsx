@@ -8,10 +8,11 @@ interface InputFieldProps {
     label: string;
     value: string;
     onChangeText: (text: string) => void
+    secureTextEntry?: boolean
 
 }
 
-const InputField = ({label, value, onChangeText}: InputFieldProps) => {
+const InputField = ({label, value, onChangeText, secureTextEntry}: InputFieldProps) => {
   return (
     <View className={formGroupStyle}>
       <Text className={labelStyle}>{label}</Text>
@@ -21,6 +22,7 @@ const InputField = ({label, value, onChangeText}: InputFieldProps) => {
         autoCapitalize="words"
         value={value}
         onChangeText={onChangeText}
+        secureTextEntry={secureTextEntry}
       />
     </View>
   );
