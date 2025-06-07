@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import RememberMeAndForgot from '~/components/RememberMeAndForget';
 import InputField from '~/components/InputField';
 import LoginHeader from '~/components/LoginHeader';
 import FormSubmitBtn from '~/components/FormSubmitBtn';
 import GoogleAuthBtn from '~/components/GoogleAuthBtn';
-import { useState } from 'react';
-import RememberMeAndForgot from '~/components/RememberMeAndForget';
 
 const LogIn = () => {
   const [email, setEmail] = useState('');
