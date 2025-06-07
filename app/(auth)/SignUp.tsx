@@ -1,4 +1,4 @@
-import { Text, View, Alert, ScrollView, KeyboardAvoidingView, Platform } from 'react-native'; // Import ScrollView, KeyboardAvoidingView, Platform
+import { Text, View, Alert, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
 import { useState } from 'react';
 import InputField from '../../components/InputField';
 import FormErrorLabel from '~/components/FormErrorLabel';
