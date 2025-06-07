@@ -6,9 +6,12 @@ const formGroupStyle = "mb-4";
 
 interface InputFieldProps {
     label: string;
+    value: string;
+    onChangeText: (text: string) => void
+
 }
 
-const InputField = ({label}: InputFieldProps) => {
+const InputField = ({label, value, onChangeText}: InputFieldProps) => {
   return (
     <View className={formGroupStyle}>
       <Text className={labelStyle}>{label}</Text>
@@ -16,6 +19,8 @@ const InputField = ({label}: InputFieldProps) => {
         className={inputStyle}
         placeholderTextColor="#999"
         autoCapitalize="words"
+        value={value}
+        onChangeText={onChangeText}
       />
     </View>
   );
