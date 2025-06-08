@@ -5,7 +5,7 @@ const inputStyle = "mx-5 mt-2 h-14 rounded-md border border-[#EDEDED] bg-white p
 const formGroupStyle = "mb-4";
 
 interface InputFieldProps {
-    label: string;
+    label?: string;
     value: string;
     onChangeText: (text: string) => void
     secureTextEntry?: boolean
