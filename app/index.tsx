@@ -1,15 +1,7 @@
-import { Stack, useRouter } from 'expo-router';
-import { Pressable, Text } from 'react-native';
+import { Redirect } from 'expo-router';
 
 export default function Home() {
-  const router = useRouter();
-
   return (
-    <>
-      <Stack.Screen options={{ title: 'Home'}} />
-      <Pressable className="bg-blue-500" onPress={() => router.push('/SignUp')}>
-        <Text>Sign Up</Text>
-      </Pressable>
-    </>
+      <Redirect href="/(auth)/LogIn" />
   );
 }
