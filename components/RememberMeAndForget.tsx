@@ -14,7 +14,7 @@ const RememberMeAndForgot = ({rememberMe, setRememberMe} : RememberMeAndForgotPr
         <Checkbox color={'#FF8C00'} value={rememberMe} onValueChange={setRememberMe}></Checkbox>
         <Text className="ml-2 text-base text-[#666666]">Remember me</Text>
       </View>
-      <Link href="/ForgotPasswordEmail">
+      <Link href="/(auth)/PasswordRecovery">
         <Text className="font-nunito-semi-bold text-primary-orange">Forgot password?</Text>
       </Link>
     </View>

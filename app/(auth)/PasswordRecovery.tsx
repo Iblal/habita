@@ -3,7 +3,7 @@ import { useState } from 'react';
 import FormSubmitBtn from '~/components/FormSubmitBtn';
 import InputField from '~/components/InputField';
 
-const ForgotPasswordEmail = () => {
+const PasswordRecovery = () => {
   const [email, setEmail] = useState('');
 
   function handleSendEmail() {
@@ -23,6 +23,6 @@ const ForgotPasswordEmail = () => {
   );
 };
 
-export default ForgotPasswordEmail;
+export default PasswordRecovery;
 
 const styles = StyleSheet.create({});
