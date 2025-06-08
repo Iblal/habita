@@ -1,10 +1,10 @@
 import { Text, View, Alert } from 'react-native';
 import { useState } from 'react';
-import RememberMeAndForgot from '~/components/RememberMeAndForget';
+import RememberMeAndForgot from '~/components/auth/RememberMeAndForget';
 import InputField from '~/components/InputField';
-import LoginHeader from '~/components/LoginHeader';
+import LoginHeader from '~/components/auth/LoginHeader';
 import FormSubmitBtn from '~/components/FormSubmitBtn';
-import GoogleAuthBtn from '~/components/GoogleAuthBtn';
+import GoogleAuthBtn from '~/components/auth/GoogleAuthBtn';
 import FormErrorLabel from '~/components/FormErrorLabel';
 
 const LogIn = () => {

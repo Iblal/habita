@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import FormSubmitBtn from '~/components/FormSubmitBtn';
-import OTPInputField from '~/components/OTPInputField';
+import OTPInputField from '~/components/auth/OTPInputField';
 
 const OTP = () => {
   const router = useRouter();

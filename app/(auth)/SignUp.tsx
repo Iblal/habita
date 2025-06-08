@@ -3,8 +3,8 @@ import { useState } from 'react';
 import InputField from '../../components/InputField';
 import FormErrorLabel from '~/components/FormErrorLabel';
 import FormSubmitBtn from '~/components/FormSubmitBtn';
-import GoogleAuthBtn from '~/components/GoogleAuthBtn';
-import SignUpHeader from '~/components/SignUpHeader';
+import GoogleAuthBtn from '~/components/auth/GoogleAuthBtn';
+import SignUpHeader from '~/components/auth/SignUpHeader';
 
 const SignUp = () => {
   const [name, setName] = useState('');
