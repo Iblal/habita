@@ -1,5 +1,6 @@
 import { Text, View, Alert } from 'react-native';
 import { useState } from 'react';
+import { useRouter } from 'expo-router';
 import RememberMeAndForgot from '~/components/auth/RememberMeAndForget';
 import InputField from '~/components/InputField';
 import LoginHeader from '~/components/auth/LoginHeader';
@@ -13,6 +14,7 @@ const LogIn = () => {
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
+  const router = useRouter();
 
   const validateForm = () => {
     let isValid = true;
@@ -38,13 +40,14 @@ const LogIn = () => {
   };
 
   function handleLogin() {
-    if (validateForm()) {
-      console.log('Login attempt with:', email, password);
-      Alert.alert('Success', 'Login credentials valid! (Implement actual login logic)');
-    } else {
-      console.log('Login validation failed.');
-      Alert.alert('Error', 'Please enter your email and password.');
-    }
+    // if (validateForm()) {
+    //   console.log('Login attempt with:', email, password);
+    //   Alert.alert('Success', 'Login credentials valid! (Implement actual login logic)');
+    // } else {
+    //   console.log('Login validation failed.');
+    //   Alert.alert('Error', 'Please enter your email and password.');
+    // }
+    router.navigate("/(tabs)/Home")
   }
 
   return (
