@@ -1,43 +1,32 @@
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { useRouter } from 'expo-router';
 import FormSubmitBtn from '~/components/FormSubmitBtn';
+import OTPInputField from '~/components/OTPInputField';
 
 const OTP = () => {
+  const router = useRouter();
+
+  function handleOTPConfirmation() {
+    console.log('OTP has been confirmed');
+    router.navigate('/(auth)/PasswordReset');
+  }
+
   return (
     <View className="mt-20 flex-1 px-5">
       <View className="mb-8">
-        <Text className="font-nunito-semi-bold text-[#666666] text-lg text-center">
+        <Text className="text-center font-nunito-semi-bold text-lg text-[#666666]">
           Enter the 5-digit OTP we've sent to your email
         </Text>
       </View>
-      <View className="flex-row justify-between mx-auto w-full max-w-sm">
-        <TextInput
-          className="w-12 h-12 border border-gray-300 rounded-md text-center text-xl font-bold bg-white"
-          keyboardType="number-pad"
-          maxLength={1}
-        />
-        <TextInput
-          className="w-12 h-12 border border-gray-300 rounded-md text-center text-xl font-bold bg-white"
-          keyboardType="number-pad"
-          maxLength={1}
-        />
-        <TextInput
-          className="w-12 h-12 border border-gray-300 rounded-md text-center text-xl font-bold bg-white"
-          keyboardType="number-pad"
-          maxLength={1}
-        />
-        <TextInput
-          className="w-12 h-12 border border-gray-300 rounded-md text-center text-xl font-bold bg-white"
-          keyboardType="number-pad"
-          maxLength={1}
-        />
-        <TextInput
-          className="w-12 h-12 border border-gray-300 rounded-md text-center text-xl font-bold bg-white"
-          keyboardType="number-pad"
-          maxLength={1}
-        />
+      <View className="mx-auto w-full max-w-sm flex-row justify-between">
+        <OTPInputField />
+        <OTPInputField />
+        <OTPInputField />
+        <OTPInputField />
+        <OTPInputField />
       </View>
-      <View className='mt-10'>
-        <FormSubmitBtn label="Submit" />
+      <View className="mt-10">
+        <FormSubmitBtn label="Submit" onPress={handleOTPConfirmation} />
       </View>
     </View>
   );
