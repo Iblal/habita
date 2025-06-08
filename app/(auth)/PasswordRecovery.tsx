@@ -1,13 +1,16 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
+import { useRouter } from 'expo-router';
 import FormSubmitBtn from '~/components/FormSubmitBtn';
 import InputField from '~/components/InputField';
 
 const PasswordRecovery = () => {
   const [email, setEmail] = useState('');
+  const router = useRouter();
 
   function handleSendEmail() {
     console.log("OTP has been sent to : ", email)
+    router.navigate('/(auth)/OTPConfirmation')
   }
 
   return (
