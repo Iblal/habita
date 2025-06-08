@@ -4,13 +4,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'nunito-bold': ['nunito-bold', 'sans-serif'],
         'nunito-extra-bold': ['nunito-extra-bold', 'sans-serif'],
+        'nunito-bold': ['nunito-bold', 'sans-serif'],
         'nunito-semi-bold': ['nunito-semi-bold', 'sans-serif'],
+        'nunito-medium': ['nunito-medium', 'sans-serif'],
       },
       colors: {
-        'primary-orange': '#FF5C00'
-      }
+        'primary-orange': '#FF5C00',
+      },
     },
   },
   plugins: [],
