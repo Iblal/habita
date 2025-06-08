@@ -8,6 +8,9 @@ module.exports = {
         'nunito-extra-bold': ['nunito-extra-bold', 'sans-serif'],
         'nunito-semi-bold': ['nunito-semi-bold', 'sans-serif'],
       },
+      colors: {
+        'primary-orange': '#FF5C00'
+      }
     },
   },
   plugins: [],

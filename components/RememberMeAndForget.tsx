@@ -15,7 +15,7 @@ const RememberMeAndForgot = ({rememberMe, setRememberMe} : RememberMeAndForgotPr
         <Text className="ml-2 text-base text-[#666666]">Remember me</Text>
       </View>
       <Link href="/">
-        <Text className="font-nunito-semi-bold text-[#FF5C00]">Forgot password?</Text>
+        <Text className="font-nunito-semi-bold text-primary-orange">Forgot password?</Text>
       </Link>
     </View>
   );
