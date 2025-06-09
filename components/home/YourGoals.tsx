@@ -27,7 +27,7 @@ const YourGoals = () => {
           </View>
           <View className="mt-5 rounded bg-[#E7E7E7] p-5">
             <View className="flex-row justify-between ">
-              <Text className="font-nunito-bold">Finish 5 philosophy books</Text>
+              <Text className="font-nunito-bold">Sleep before 11pm</Text>
               <Entypo name="dots-three-vertical" size={16} color="grey" />
             </View>
             <LinearGradient
