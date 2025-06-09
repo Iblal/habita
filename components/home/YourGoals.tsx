@@ -2,7 +2,6 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Link } from 'expo-router';
 import { Entypo } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import React from 'react'
 
 const YourGoals = () => {
   return (
