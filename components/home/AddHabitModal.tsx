@@ -29,9 +29,9 @@ const AddHabitModal = ({ modalVisible, setModalVisible }: AddHabitModalProps) =>
             </Pressable>
           </View>
           <View className="my-2 h-px w-11/12 bg-gray-300" />
-          <InputField label="Your goal" />
-          <InputField label="Habit name" />
-          <FormSubmitBtn label="Create new" />
+          <InputField label="Your goal" labelClassName="px-0" containerClassName="mb-5" />
+          <InputField label="Habit name" labelClassName="px-0" containerClassName="mb-5" />
+          <FormSubmitBtn label="Create new" containerClassName="w-full mx-1 mr-5" />
         </View>
       </View>
     </Modal>
