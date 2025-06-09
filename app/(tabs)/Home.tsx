@@ -1,9 +1,10 @@
-import { View, ScrollView, Pressable, Text } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import TodaysHabitsSummary from '~/components/home/TodaysHabitsSummary';
 import TodaysHabits from '~/components/home/TodaysHabits';
 import YourGoals from '~/components/home/YourGoals';
 import GreetingHeader from '~/components/home/GreetingHeader';
 import TodaysDateHeader from '~/components/home/TodaysDateHeader';
+import AddHabitBtn from '~/components/home/AddHabitBtn';
 
 const Home = () => {
   return (
@@ -17,9 +18,7 @@ const Home = () => {
           <YourGoals />
         </View>
       </ScrollView>
-      <Pressable className="absolute bottom-5 right-5 rounded-full border-2 border-white bg-green-500 p-4">
-        <Text className="text-lg font-bold text-white">Add</Text>
-      </Pressable>
+      <AddHabitBtn />
     </View>
   );
 };
