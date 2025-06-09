@@ -9,8 +9,8 @@ const PasswordRecovery = () => {
   const router = useRouter();
 
   function handleSendEmail() {
-    console.log("OTP has been sent to : ", email)
-    router.navigate('/(auth)/OTPConfirmation')
+    console.log('OTP has been sent to : ', email);
+    router.navigate('/(auth)/OTPConfirmation');
   }
 
   return (
@@ -20,7 +20,7 @@ const PasswordRecovery = () => {
           Enter your email below, we will send instructions to reset your password
         </Text>
       </View>
-      <InputField value={email} onChangeText={setEmail} />
+      <InputField value={email} onChangeText={setEmail} inputClassName="mx-5 mt-2 mb-5" />
       <FormSubmitBtn label="Send email" onPress={handleSendEmail} />
     </View>
   );

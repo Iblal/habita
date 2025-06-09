@@ -19,7 +19,7 @@ const OTP = () => {
         </Text>
       </View>
       <View className="mx-auto w-full max-w-sm flex-row justify-between">
-        <OTPInputField />
+        <OTPInputField  />
         <OTPInputField />
         <OTPInputField />
         <OTPInputField />

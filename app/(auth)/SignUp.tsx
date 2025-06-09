@@ -106,15 +106,26 @@ const SignUp = () => {
         keyboardShouldPersistTaps="handled">
         <SignUpHeader />
         <FormErrorLabel label={nameError} />
-        <InputField label="Name" value={name} onChangeText={handleNameChange} />
+        <InputField
+          label="Name"
+          value={name}
+          onChangeText={handleNameChange}
+          inputClassName="mx-5 mt-2"
+        />
         <FormErrorLabel label={emailError} />
-        <InputField label="Email" value={email} onChangeText={handleEmailChange} />
+        <InputField
+          label="Email"
+          value={email}
+          onChangeText={handleEmailChange}
+          inputClassName="mx-5 mt-2"
+        />
         <FormErrorLabel label={passwordError} />
         <InputField
           label="Password"
           value={password}
           onChangeText={handlePasswordChange}
           secureTextEntry={true}
+          inputClassName="mx-5 mt-2"
         />
         <FormErrorLabel label={passwordConfirmationError} />
         <InputField
@@ -122,6 +133,7 @@ const SignUp = () => {
           value={passwordConfirmation}
           onChangeText={handlePasswordConfirmationChange}
           secureTextEntry={true}
+          inputClassName="mx-5 mt-2"
         />
         <View className="mt-5">
           <FormSubmitBtn label="Sign Up" onPress={handleRegistration} />
