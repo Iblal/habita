@@ -1,4 +1,7 @@
-import { Text, View, Modal, Alert, Pressable } from 'react-native';
+import { Text, View, Modal, Pressable } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
+import InputField from '../InputField';
+import FormSubmitBtn from '../FormSubmitBtn';
 
 interface AddHabitModalProps {
   modalVisible: boolean;
@@ -6,7 +9,6 @@ interface AddHabitModalProps {
 }
 
 const AddHabitModal = ({ modalVisible, setModalVisible }: AddHabitModalProps) => {
-
   function closeModal() {
     setModalVisible(false);
   }
@@ -16,23 +18,20 @@ const AddHabitModal = ({ modalVisible, setModalVisible }: AddHabitModalProps) =>
       visible={modalVisible}
       transparent={true}
       onRequestClose={() => {
-        Alert.alert('Modal has been closed.');
         setModalVisible(false);
       }}>
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: 'rgba(0,0,0,0.5)',
-        }}>
-        <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, elevation: 5 }}>
-          <Text>Hello from the modal!</Text>
-          <Pressable
-            onPress={closeModal}
-            style={{ marginTop: 15, padding: 10, backgroundColor: '#2196F3', borderRadius: 5 }}>
-            <Text style={{ color: 'white', textAlign: 'center' }}>Close Modal</Text>
-          </Pressable>
+      <View className="flex-1 items-center justify-center bg-black/50 p-5">
+        <View className="w-full rounded-lg bg-white p-5 shadow-lg">
+          <View className="mb-2 flex-row justify-between">
+            <Text className="font-nunito-bold">Create new habit goal</Text>
+            <Pressable onPress={closeModal}>
+              <AntDesign name="close" size={16} color="black" />
+            </Pressable>
+          </View>
+          <View className="my-2 h-px w-11/12 bg-gray-300" />
+          <InputField label="Your goal" />
+          <InputField label="Habit name" />
+          <FormSubmitBtn label="Create new" />
         </View>
       </View>
     </Modal>

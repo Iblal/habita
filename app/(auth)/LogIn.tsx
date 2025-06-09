@@ -1,4 +1,4 @@
-import { Text, View, Alert } from 'react-native';
+import { Text, View } from 'react-native';
 import { useState } from 'react';
 import { useRouter } from 'expo-router';
 import RememberMeAndForgot from '~/components/auth/RememberMeAndForget';
@@ -47,13 +47,13 @@ const LogIn = () => {
     //   console.log('Login validation failed.');
     //   Alert.alert('Error', 'Please enter your email and password.');
     // }
-    router.navigate("/(tabs)/Home")
+    router.navigate('/(tabs)/Home');
   }
 
   return (
     <View className="flex-1 bg-[#f6f6f6b1] pt-10">
       <LoginHeader />
-      <FormErrorLabel label={emailError}/>
+      <FormErrorLabel label={emailError} />
       <InputField
         label="Email"
         value={email}
@@ -63,9 +63,10 @@ const LogIn = () => {
             setEmailError('');
           }
         }}
+        inputClassName="mx-5 mt-2"
       />
 
-      <FormErrorLabel label={passwordError}/>
+      <FormErrorLabel label={passwordError} />
       <InputField
         label="Password"
         value={password}
@@ -76,6 +77,7 @@ const LogIn = () => {
           }
         }}
         secureTextEntry={true}
+        inputClassName="mx-5 mt-2"
       />
 
       <View className="mt-5">
