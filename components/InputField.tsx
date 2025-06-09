@@ -1,33 +1,37 @@
-import { StyleSheet, Text, View, TextInput} from 'react-native';
+import { Text, View, TextInput, TextInputProps } from 'react-native';
 
-const labelStyle = "px-5 font-nunito-semi-bold text-base text-[#666666]";
-const inputStyle = "mx-5 mt-2 h-14 rounded-md border border-[#EDEDED] bg-white p-4";
-const formGroupStyle = "mb-4";
+const baseLabelStyle = "px-5 font-nunito-semi-bold text-base text-[#666666]";
+const baseInputStyle = "h-14 rounded-md border border-[#EDEDED] bg-white p-4";
 
-interface InputFieldProps {
-    label?: string;
-    value: string;
-    onChangeText: (text: string) => void
-    secureTextEntry?: boolean
-
+interface InputFieldProps extends TextInputProps {
+  label?: string;
+  containerClassName?: string;
+  labelClassName?: string;
+  inputClassName?: string;
 }
 
-const InputField = ({label, value, onChangeText, secureTextEntry}: InputFieldProps) => {
+const InputField = ({
+  label,
+  containerClassName = '',
+  labelClassName = '',
+  inputClassName = '',
+  ...rest
+}: InputFieldProps) => {
   return (
-    <View className={formGroupStyle}>
-      <Text className={labelStyle}>{label}</Text>
+    <View className={containerClassName}>
+      {label && (
+        <Text className={`${baseLabelStyle} ${labelClassName}`}>
+          {label}
+        </Text>
+      )}
       <TextInput
-        className={inputStyle}
+        className={`${baseInputStyle} ${inputClassName}`}
         placeholderTextColor="#999"
         autoCapitalize="words"
-        value={value}
-        onChangeText={onChangeText}
-        secureTextEntry={secureTextEntry}
+        {...rest}
       />
     </View>
   );
 };
 
 export default InputField;
-
-const styles = StyleSheet.create({});
