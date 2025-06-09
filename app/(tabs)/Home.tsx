@@ -1,4 +1,4 @@
-import { Text, View, ScrollView } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import TodaysHabitsSummary from '~/components/home/TodaysHabitsSummary';
 import TodaysHabits from '~/components/home/TodaysHabits';
 import YourGoals from '~/components/home/YourGoals';
