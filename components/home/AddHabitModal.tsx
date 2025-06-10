@@ -1,5 +1,7 @@
-import { Text, View, Modal, Pressable } from 'react-native';
+import { Text, View, Modal, Pressable, StyleSheet } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import { Picker } from '@react-native-picker/picker';
+import { useRouter } from 'expo-router'
 import InputField from '../InputField';
 import FormSubmitBtn from '../FormSubmitBtn';
 
@@ -9,6 +11,13 @@ interface AddHabitModalProps {
 }
 
 const AddHabitModal = ({ modalVisible, setModalVisible }: AddHabitModalProps) => {
+  const router = useRouter();
+
+
+  function habitAddedSuccessfully() {
+    router.push("/SuccessfullyAddedHabit")
+  }
+
   function closeModal() {
     setModalVisible(false);
   }
@@ -29,9 +38,21 @@ const AddHabitModal = ({ modalVisible, setModalVisible }: AddHabitModalProps) =>
             </Pressable>
           </View>
           <View className="my-2 h-px w-11/12 bg-gray-300" />
-          <InputField label="Your goal" labelClassName="px-0" containerClassName="mb-5" />
-          <InputField label="Habit name" labelClassName="px-0" containerClassName="mb-5" />
-          <FormSubmitBtn label="Create new" containerClassName="w-full mx-1 mr-5" />
+          <InputField label="Your goal" labelClassName="px-1" containerClassName="mb-5" />
+          <InputField label="Habit name" labelClassName="px-1" containerClassName="mb-5" />
+          <View className="mb-5 flex-row items-center justify-between">
+            <Text className="font-nunito-bold ">Period</Text>
+            <Picker style={styles.picker} mode="dropdown">
+              <Picker.Item label="1 month (30 days)" value="30 days" />
+            </Picker>
+          </View>
+          <View className="mb-5 flex-row items-center justify-between">
+            <Text className="font-nunito-bold ">Habit type</Text>
+            <Picker style={styles.picker} mode="dropdown">
+              <Picker.Item label="Everyday" value="Everyday" />
+            </Picker>
+          </View>
+          <FormSubmitBtn onPress={habitAddedSuccessfully} label="Create new" containerClassName="w-full mx-1 mr-5 mt-3" />
         </View>
       </View>
     </Modal>
@@ -39,3 +60,14 @@ const AddHabitModal = ({ modalVisible, setModalVisible }: AddHabitModalProps) =>
 };
 
 export default AddHabitModal;
+
+const styles = StyleSheet.create({
+  picker: {
+    height: 50,
+    width: 200,
+    backgroundColor: '#E7E7E7',
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 10,
+  },
+});
