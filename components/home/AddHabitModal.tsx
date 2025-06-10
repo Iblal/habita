@@ -38,8 +38,8 @@ const AddHabitModal = ({ modalVisible, setModalVisible }: AddHabitModalProps) =>
             </Pressable>
           </View>
           <View className="my-2 h-px w-11/12 bg-gray-300" />
-          <InputField label="Your goal" labelClassName="px-1" containerClassName="mb-5" />
-          <InputField label="Habit name" labelClassName="px-1" containerClassName="mb-5" />
+          <InputField label="Your goal" labelClassName="px-2" containerClassName="mb-5" />
+          <InputField label="Habit name" labelClassName="px-2" containerClassName="mb-5" />
           <View className="mb-5 flex-row items-center justify-between">
             <Text className="font-nunito-bold ">Period</Text>
             <Picker style={styles.picker} mode="dropdown">
@@ -52,7 +52,7 @@ const AddHabitModal = ({ modalVisible, setModalVisible }: AddHabitModalProps) =>
               <Picker.Item label="Everyday" value="Everyday" />
             </Picker>
           </View>
-          <FormSubmitBtn onPress={habitAddedSuccessfully} label="Create new" containerClassName="w-full mx-1 mr-5 mt-3" />
+          <FormSubmitBtn onPress={habitAddedSuccessfully} label="Create new" containerClassName="mt-5" />
         </View>
       </View>
     </Modal>

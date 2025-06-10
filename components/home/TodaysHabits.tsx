@@ -9,7 +9,7 @@ const TodaysHabits = () => {
         <View className="mr-5 mt-5 rounded bg-white p-5">
           <View className="flex-row justify-between">
             <Text className="font-nunito-bold text-xl">Today's habits</Text>
-            <Link href="/">
+            <Link href="/Habits">
               <Text className="font-nunito-bold text-primary-orange">See all</Text>
             </Link>
           </View>
